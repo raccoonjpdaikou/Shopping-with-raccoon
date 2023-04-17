@@ -1,0 +1,39 @@
+.collapse-layout {
+  margin-bottom: 0.75rem;
+  border-radius: 1rem;
+  padding: 0.75rem;
+}
+.collapse-display-info {
+  display: flex;
+  justify-content: space-between;
+}
+.collapse-display-comment {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.collapse-hidden {
+  overflow: hidden;
+  transition: height 0.4s ease-in-out;
+}
+.collapseh-icon {
+  color: #4d5139;
+  margin-left: 1rem;
+  font-size: 1.7rem;
+  margin-right: 0.75rem;
+}
+.collapse-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+  color: #4d5139;
+}
+/* .collapse-date {
+}
+.admin-btn {
+} */
+@include media-breakpoint-down(lg) {
+  .collapse-display-info {
+    flex-direction: column;
+  }
+}

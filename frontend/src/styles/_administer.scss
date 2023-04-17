@@ -1,0 +1,83 @@
+$sidebar-width: 200px;
+$topbar-height: 3.5rem;
+
+.sidebar {
+  width: $sidebar-width;
+  margin-left: -$sidebar-width;
+  transition: margin-left 0.25s;
+  background-color: #ede4d4;
+}
+.topbar {
+  height: $topbar-height;
+}
+.main {
+  width: 100%;
+}
+
+.sidebar-toggle {
+  .sidebar {
+    margin-left: 0;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .sidebar {
+    width: $sidebar-width;
+    margin-left: 0;
+  }
+  .main {
+    width: calc(100vw - #{$sidebar-width});
+  }
+  .sidebar-toggle {
+    .sidebar {
+      margin-left: -$sidebar-width;
+    }
+    .main {
+      width: 100%;
+    }
+  }
+  .login-section {
+    margin-top: 7rem;
+  }
+}
+.admin-layout {
+  height: calc(100vh - #{$topbar-height});
+  padding: 1rem;
+}
+.admin-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.admin-content {
+  flex-direction: column;
+  border-radius: 0.5%;
+  padding: 0.75rem;
+  background-color: #caad5f;
+  display: flex;
+  overflow-y: scroll;
+  height: 75vh;
+  margin-top: 2rem;
+}
+.rate-layout {
+  height: calc(100vh - 3.5rem);
+}
+.rate-title {
+  font-weight: 700;
+  height: 68vh;
+
+  @include media-breakpoint-up(lg) {
+    @include rfs(20rem);
+  }
+  @include media-breakpoint-down(lg) {
+    @include rfs(20rem);
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include rfs(15rem);
+  }
+}
+.rate-date {
+  margin-bottom: 2rem;
+  align-self: center;
+}

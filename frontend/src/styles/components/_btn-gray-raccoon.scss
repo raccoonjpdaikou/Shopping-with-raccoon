@@ -1,0 +1,19 @@
+@mixin button-variant($background, $color, $active-background) {
+  --#{$prefix}btn-color: #{$color};
+  --#{$prefix}btn-bg: #{$background};
+  --#{$prefix}btn-border-color: #{$background};
+  --#{$prefix}btn-hover-color: #{$color};
+  --#{$prefix}btn-hover-bg: #{$background};
+  --#{$prefix}btn-hover-border-color: #{$color};
+  --#{$prefix}btn-focus-shadow-rgb: #{$background};
+  --#{$prefix}btn-active-color: #{$color};
+  --#{$prefix}btn-active-bg: #{$active-background};
+  --#{$prefix}btn-active-border-color: #{$color};
+  --#{$prefix}btn-active-shadow: #{$color};
+  --#{$prefix}btn-disabled-color: #{$color};
+  --#{$prefix}btn-disabled-bg: #{$color};
+  --#{$prefix}btn-disabled-border-color: #{$color};
+}
+.btn-gray-raccoon {
+  @include button-variant(#d8d9dd, #465d4c, #d8d9dd);
+}

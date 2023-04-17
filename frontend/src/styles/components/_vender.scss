@@ -1,0 +1,42 @@
+:root {
+  scroll-padding-top: 4rem;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.section {
+  margin-top: 5rem;
+  width: 100%;
+  min-height: calc(100vh - 5rem);
+}
+.required-star {
+  color: red;
+}
+
+h1 {
+  font-weight: 700;
+  @include font-size(2.5rem);
+}
+p {
+  @include rfs(0.8rem, margin-bottom);
+  font-size: 0.875rem;
+}
+ol {
+  font-size: 0.875rem;
+}
+.list-ch-num {
+  list-style: cjk-ideographic;
+}
+.list-none {
+  list-style: none !important;
+}
+.list-position-i {
+  list-style-position: inside;
+}
+.list-position-o {
+  list-style-position: outside;
+}

@@ -1,0 +1,23 @@
+@mixin button-outline-variant($color, $color2) {
+  --#{$prefix}btn-color: #{$color};
+  --#{$prefix}btn-border-color: #{$color};
+  --#{$prefix}btn-hover-color: #{$color2};
+  --#{$prefix}btn-hover-bg: #{null};
+  --#{$prefix}btn-hover-border-color: #{$color2};
+  --#{$prefix}btn-focus-shadow-rgb: #{$color2};
+  --#{$prefix}btn-active-color: #{$color};
+  --#{$prefix}btn-active-bg: #{$color2};
+  --#{$prefix}btn-active-border-color: #{$color2};
+  --#{$prefix}btn-active-shadow: #{$color2};
+  --#{$prefix}btn-disabled-color: #{$color};
+  --#{$prefix}btn-disabled-bg: transparent;
+  --#{$prefix}btn-disabled-border-color: #{$color};
+  --#{$prefix}gradient: none;
+}
+.btn-outline-raccoon {
+  @include button-outline-variant(#465d4c, #e98b2a);
+  &:focus {
+    border-color: #e98b2a;
+    color: #e98b2a;
+  }
+}

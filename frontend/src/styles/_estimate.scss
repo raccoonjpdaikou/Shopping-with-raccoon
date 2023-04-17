@@ -1,0 +1,127 @@
+.estimate-row {
+  display: flex;
+  justify-content: space-between;
+  min-height: calc(100vh - 5rem);
+}
+.estimate-rule-layout {
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 0rem;
+}
+.estimate-footer {
+  margin-bottom: 1rem;
+}
+.estimate-rule-color {
+  background-color: #ede4d4;
+  padding: 2.5rem 4rem 3rem 0rem;
+  margin-top: 1rem;
+  border-radius: 0 8rem 5rem 0;
+  width: 55vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.estimate-rule-content {
+  width: 40vw;
+}
+.estimate-title {
+  margin-bottom: 2rem;
+}
+.estimate-cal-layout {
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: flex-end;
+}
+.estimate-cal-color {
+  margin-top: 2rem;
+  width: fit-content;
+  height: fit-content;
+  background-color: #caad5f;
+  border-radius: 20% 70% / 20% 8%;
+  padding: 4rem 4rem 4rem 5rem;
+  form {
+    width: 28vw;
+  }
+}
+.estimate-cal-input {
+  margin-bottom: 0.75rem;
+  p {
+    margin-bottom: 0.75rem;
+  }
+}
+.estimate-cal-btn {
+  margin-top: 1.5rem;
+  margin-bottom: -1rem;
+}
+
+@include media-breakpoint-only(lg) {
+  .estimate-rule-color {
+    margin-top: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .estimate-cal-btn {
+    margin-top: 1rem;
+  }
+  .estimate-title {
+    margin-bottom: 1rem;
+  }
+  .estimate-cal-color {
+    padding: 3rem 4rem 3rem 5rem;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .estimate-row {
+    flex-direction: column;
+  }
+  .estimate-rule-layout {
+    min-height: auto;
+  }
+  .estimate-rule-color {
+    padding: 3rem 0 15rem 0;
+    margin-top: 0rem;
+    border-radius: 4rem 4rem 0 0;
+    width: 100vw;
+    min-height: auto;
+    justify-content: center;
+  }
+  .estimate-rule-content {
+    width: 75vw;
+  }
+  .estimate-cal-layout {
+    justify-content: center;
+    min-height: auto;
+  }
+  .estimate-cal-color {
+    margin: -13rem 0 2rem 0;
+    padding: 3.5rem 4.5rem;
+    form {
+      width: 40vw;
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  .estimate-rule-color {
+    border-radius: 3rem;
+    padding-top: 2.5rem;
+  }
+  .estimate-title {
+    margin: 0 0 1rem 1.5rem;
+  }
+  .estimate-rule-content {
+    width: 90vw;
+    padding-right: 0.75rem;
+  }
+  .estimate-cal-color {
+    border-radius: 3rem;
+    padding: 3rem 0 2rem 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    form {
+      width: 75vw;
+    }
+    margin-bottom: 1rem;
+  }
+}

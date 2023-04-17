@@ -1,0 +1,115 @@
+@media (min-width: 0px) {
+  .setting-input-section {
+    background-color: #ede4d4;
+    padding: 3rem 2rem 4rem 2rem;
+    border-radius: 3rem 3rem 0 0;
+    h1 {
+      padding-bottom: 0.5rem;
+    }
+  }
+  .setting-agree-section {
+    background-color: #caad5f;
+    padding: 2.5rem 2rem 1.5rem 1rem;
+    border-radius: 3rem;
+    margin-top: -3rem;
+    margin-bottom: 1rem;
+  }
+  .setting-agree {
+    padding-left: 2.5rem;
+  }
+  .setting-btn {
+    text-align: center;
+    margin-top: 1rem;
+    padding-left: 1rem;
+  }
+  .setting-layout {
+    li {
+      padding-bottom: 0.3rem;
+    }
+  }
+  .setting-footer {
+    margin: 0.5rem 0;
+    margin-top: auto;
+  }
+}
+@media (min-width: 375px) {
+  .setting-input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input {
+      width: 320px;
+    }
+    h1 {
+      align-self: start;
+      padding-left: 3rem;
+    }
+  }
+  .setting-agree-section {
+    display: flex;
+    justify-content: center;
+  }
+  .setting-agree-content {
+    width: 70vw;
+  }
+}
+@media (min-width: 540px) {
+  .setting-agree-content {
+    max-width: 320px;
+  }
+}
+@media (min-width: 720px) {
+  //直
+  @media (min-height: 768px) {
+    .setting-layout {
+      position: relative;
+    }
+    .setting-footer {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
+    .setting-form {
+      height: calc(100vh - 9rem);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .setting-input-section {
+      width: fit-content;
+      input {
+        width: 320px;
+      }
+      border-radius: 3rem;
+      padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+      h1 {
+        padding-left: 0.5rem;
+      }
+      margin-right: 6rem;
+    }
+    .setting-agree-section {
+      width: fit-content;
+      margin: -1.25rem 0rem 0rem 6rem;
+      padding: 3rem 2.75rem 2rem 2.25rem;
+    }
+  }
+}
+@media (min-width: 1024px) and (min-height: 768px) {
+  .setting-form {
+    flex-direction: row;
+  }
+  .setting-input-section {
+    margin: 0 0 3rem 0;
+  }
+  .setting-agree-section {
+    margin: 3rem 0 0 0;
+  }
+}
+@media (min-width: 1440px) {
+}
+
+/* 1440*900，
+1680*1050，
+1920*1280，
+2560*1600*/
