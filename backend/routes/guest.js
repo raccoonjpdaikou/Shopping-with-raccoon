@@ -24,7 +24,7 @@ router.get("/info", async (req, res) => {
 router.get("/rate", async (req, res) => {
   try {
     let rateFound = await Rate.find({}).exec();
-    return res.send(rateFound.findLast(Date.now));
+    return res.send(rateFound);
   } catch (e) {
     return res.status(500).send(e);
   }
