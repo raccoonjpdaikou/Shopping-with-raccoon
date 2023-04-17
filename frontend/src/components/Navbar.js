@@ -93,13 +93,13 @@ const NavBrand = () => {
     <>
       <img
         className="nav-logo d-inline-block d-none d-md-block"
-        src="../brand_logo.PNG"
+        src="../../public/brand_logo.PNG"
         title="小浣熊代購趣"
         alt="小浣熊代購趣"
       />
       <img
         className="nav-logo d-inline-block d-block d-md-none"
-        src="../brand_logo_small.PNG"
+        src="../../public/brand_logo_small.PNG"
         title="小浣熊代購趣"
         alt="小浣熊代購趣"
       />
