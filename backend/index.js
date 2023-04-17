@@ -15,7 +15,7 @@ dotenv.config();
 
 // 連結MongoDB
 mongoose
-  .connect("mongodb://127.0.0.1:27017/raccoonDB")
+  .connect(process.env.MONGO_CONNECTION)
   .then(() => {
     console.log("連結到mongodb...");
   })
