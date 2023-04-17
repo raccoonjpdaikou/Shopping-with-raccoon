@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm i",
-    "dev": "nodemon indesx.js"
+    "dev": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +17,6 @@
     "joi": "^17.8.4",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.2",
-    "nodemon": "^2.0.20",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0"
