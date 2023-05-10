@@ -2,7 +2,6 @@ import axios from "axios";
 let token;
 if (localStorage.getItem("raccoon")) {
   token = JSON.parse(localStorage.getItem("raccoon")).token;
-  console.log(token);
 } else {
   token = "";
 }

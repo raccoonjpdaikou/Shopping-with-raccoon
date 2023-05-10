@@ -23,7 +23,7 @@ const Estimate = () => {
   useEffect(() => {
     GuestService.rate()
       .then((data) => {
-        setRate(data.data.rate);
+        setRate(data.data[0].rate);
       })
       .catch((e) => {
         console.log(e.response.data);

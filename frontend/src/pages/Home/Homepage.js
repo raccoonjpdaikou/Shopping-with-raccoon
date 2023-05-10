@@ -11,16 +11,18 @@ const Homepage = () => {
           <h1>待更新</h1>
           <ol>
             <li>訂單查詢頁面</li>
+            <li>登入頁面rwd</li>
+            <li>dashbord的navbar</li>
             <li>首頁</li>
             <li>ipad的navbar</li>
             <li>加一個scroll to top(SPA的緣故)</li>
-            <li>只有rate會500</li>
           </ol>
           <h1>有空再處理</h1>
           <ol>
             <li>後台的sidebar跟navbar(active功能)</li>
             <li>前後台的公告+後台的留言 要改翻頁模式</li>
             <li>電腦板首頁加一個回到頂部的功能</li>
+            <li>rate防延遲優化</li>
           </ol>
           <h1>已知bug</h1>
           <ol>

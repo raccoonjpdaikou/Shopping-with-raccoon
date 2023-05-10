@@ -21,8 +21,10 @@ const Login = () => {
   const handleLogin = async (e) => {
     try {
       let res = await AuthService.login(data.username, data.password);
-      console.log(res);
-      if (res.status === 200 && res.data.user.role !== "customer") {
+      if (
+        res.status === 200 &&
+        res.data.user.role === process.env.REACT_APP_ADMIN_PASSWORD
+      ) {
         localStorage.setItem("raccoon", JSON.stringify(res.data));
         navigate("/admin/rate");
       } else {
@@ -32,7 +34,13 @@ const Login = () => {
       setMessage("帳號密碼輸入錯誤");
     }
   };
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (localStorage.getItem("raccoon")) {
+      let role = JSON.parse(localStorage.getItem("raccoon")).user.role;
+      if (role === process.env.REACT_APP_ADMIN_PASSWORD)
+        navigate("/admin/rate");
+    }
+  }, []);
   return (
     <>
       <div className="login-section container pt-5">

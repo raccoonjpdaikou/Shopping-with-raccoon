@@ -15,12 +15,12 @@ const Rate = () => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") click();
   };
-  const update = () => {
-    GuestService.rate()
+  const update = async (e) => {
+    await GuestService.rate()
       .then((data) => {
         if (data.data.date === "") return;
-        setDisplayRate(data.data.rate);
-        setDisplayTime(data.data.date);
+        setDisplayRate(data.data[0].rate);
+        setDisplayTime(data.data[0].date);
       })
       .catch((e) => {
         console.log(e.response.data);
@@ -31,19 +31,16 @@ const Rate = () => {
     if (rate !== "") {
       setDisplayRate(rate);
       await RateService.delete()
-        .then((data) => {
-          console.log(data);
-        })
+        .then((data) => {})
         .catch((e) => {
           console.log(e.response.data);
         });
       RateService.post(rate)
         .then((data) => {
-          console.log(data);
-          update();
+          setRate("");
         })
         .then((data) => {
-          setRate("");
+          update();
         })
         .catch((e) => {
           console.log(e.response.data);
