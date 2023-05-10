@@ -40,7 +40,7 @@ router.post("/login", async (req, res) => {
   // 確認是否被註冊過
   const foundUser = await User.findOne({ username: req.body.username });
   if (!foundUser) {
-    return res.status(401).send("帳號密碼輸入錯誤");
+    return res.status(401).send("該帳號不存在");
   }
 
   foundUser.comparePassword(req.body.password, (err, isMatch) => {
