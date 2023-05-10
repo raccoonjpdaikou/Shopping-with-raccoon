@@ -40,7 +40,7 @@ router.post("/login", async (req, res) => {
   // 確認是否被註冊過
   const foundUser = await User.findOne({ username: req.body.username });
   if (!foundUser) {
-    return res.status(401).send("該帳號不存在");
+    return res.status(402).send("該帳號不存在");
   }
 
   foundUser.comparePassword(req.body.password, (err, isMatch) => {
@@ -61,4 +61,11 @@ router.post("/login", async (req, res) => {
   });
 });
 
+router.post("/check", async (req, res) => {
+  // 確認是否被註冊過
+  const foundUser = await User.findOne({ username: req.body.username });
+  if (!foundUser) {
+    return res.status(402).send("該帳號不存在");
+  }
+});
 module.exports = router;
