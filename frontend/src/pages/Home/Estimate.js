@@ -15,7 +15,7 @@ const Estimate = () => {
     setTotal(
       ((data.price ? data.price : 0) +
         (data.deliveryFee ? data.deliveryFee : 0)) *
-        rate +
+        (rate + 0.055) +
         (data.serviceFee ? data.serviceFee : 0)
     );
   };
@@ -113,15 +113,12 @@ const Estimate = () => {
                   </label>
                   <input
                     id="exrate"
-                    type="number"
+                    type="text"
                     className="form-control"
-                    value={rate}
+                    value={rate + " + 0.055"}
                     aria-describedby="ExchangeRateHelp"
                     disabled
                   />
-                  <div id="ExchangeRateHelp" className="form-text">
-                    <p>代購匯率為上方顯示匯率+0.055</p>
-                  </div>
                 </div>
                 <div className="estimate-cal-input">
                   <label htmlFor="serviceFee" className="form-label">

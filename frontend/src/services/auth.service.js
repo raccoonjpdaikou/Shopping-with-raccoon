@@ -22,6 +22,11 @@ class AuthService {
   getCurrentUser() {
     return JSON.parse(localStorage.getItem("raccoon"));
   }
+  check(username) {
+    return axios.post(API_URL + "/check", {
+      username,
+    });
+  }
 }
 
 export default new AuthService();

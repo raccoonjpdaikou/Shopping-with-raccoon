@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 /* scss在others */
 const Servicepolicy = () => {
@@ -117,7 +118,11 @@ const Servicepolicy = () => {
             隱私權
             <ol className="list-position-o">
               <li>
-                關於顧客資料，依照小浣熊提供之「隱私權政策（這裡連我們隱私權政策的超連結）」受到保護與規範。
+                關於顧客資料，依照小浣熊提供之「
+                <Link to="/privacy" className="policy-link">
+                  隱私權政策
+                </Link>
+                」受到保護與規範。
               </li>
               <li>
                 為維護顧客自身權益，請勿將查詢系統之密碼提供予第三人知悉，若有盜用、冒用之情形，請顧客通知、聯絡小浣熊。
