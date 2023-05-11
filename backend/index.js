@@ -56,6 +56,6 @@ app.use(
   commentRoute
 );
 
-app.listen(80800, () => {
-  console.log("代理伺服器正在監聽在port 8080...");
+app.listen(8080, () => {
+  console.log("後端伺服器聆聽在port 8080...");
 });
