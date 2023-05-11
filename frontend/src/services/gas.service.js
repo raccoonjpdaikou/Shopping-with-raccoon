@@ -3,7 +3,7 @@ import axios from "axios";
 class GasService {
   orderGet1(user_id) {
     return axios.get(
-      "https://script.google.com/macros/s/AKfycbyWdFG_9McTEL49aK3HLPHYqDSI3KJWcsQ1KjyswxytPNE0uKJWuPX6htXdhqJ-Iz5RYQ/exec?uid=" +
+      "https://script.google.com/macros/s/AKfycbyvjLtLKOiHiZA_TYLZg6xKflV0UyJBOdkIDCPQ1B00oT8knEHBlz60xNkhhmBuyTfWiQ/exec?uid=" +
         user_id
     );
   }

@@ -2,7 +2,6 @@ const router = require("express").Router();
 const Info = require("../models").info;
 const Rate = require("../models").rate;
 const Comment = require("../models").comment;
-const Reply = require("../models").reply;
 const commentValidation = require("../validation").commentValidation;
 
 router.use((req, res, next) => {

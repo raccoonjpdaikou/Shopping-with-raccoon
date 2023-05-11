@@ -12,7 +12,7 @@ const cors = require("cors");
 const passport = require("passport");
 require("./config/passport")(passport);
 dotenv.config();
-
+// 加入gas前
 // 連結MongoDB
 mongoose
   .connect(process.env.MONGO_CONNECTION)
