@@ -66,6 +66,6 @@ router.post("/check", async (req, res) => {
   const foundUser = await User.findOne({ username: req.body.username });
   if (!foundUser) {
     return res.status(402).send("該帳號不存在");
-  }
+  } else return res.send({ message: "已註冊" });
 });
 module.exports = router;
