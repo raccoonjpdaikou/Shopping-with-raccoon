@@ -58,14 +58,16 @@ app.use(
   commentRoute
 );
 
-app.get("/api/gas/:id", (req, res) => {
+app.get("/api/gas", (req, res) => {
+  // 獲取請求參數
+  let id = req.query.id;
   // 發送HTTP請求到Google Apps Script
   let options = {
     hostname: "script.google.com",
     port: 80,
     path:
       "/macros/s/AKfycbyvjLtLKOiHiZA_TYLZg6xKflV0UyJBOdkIDCPQ1B00oT8knEHBlz60xNkhhmBuyTfWiQ/exec?uid=" +
-      req.params.id,
+      id,
     method: "get",
     headers: req.headers,
   };
