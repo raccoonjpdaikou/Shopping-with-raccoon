@@ -58,13 +58,15 @@ app.use(
   commentRoute
 );
 
-app.all("/api/gas/data1", (req, res) => {
+app.get("/api/gas/:id", (req, res) => {
   // 發送HTTP請求到Google Apps Script
   let options = {
     hostname: "script.google.com",
     port: 80,
-    path: "/macros/s/AKfycbyvjLtLKOiHiZA_TYLZg6xKflV0UyJBOdkIDCPQ1B00oT8knEHBlz60xNkhhmBuyTfWiQ/exec",
-    method: req.method,
+    path:
+      "/macros/s/AKfycbyvjLtLKOiHiZA_TYLZg6xKflV0UyJBOdkIDCPQ1B00oT8knEHBlz60xNkhhmBuyTfWiQ/exec?uid=" +
+      req.params.id,
+    method: "get",
     headers: req.headers,
   };
   let proxyReq = http.request(options, (proxyRes) => {

@@ -1,9 +1,9 @@
 import axios from "axios";
-const API_URL = `${process.env.REACT_APP_SERVER_CONNECTION}`;
+const API_URL = `${process.env.REACT_APP_SERVER_CONNECTION}gas`;
 
 class GasService {
   orderGet1(user_id) {
-    return axios.get(API_URL + "?uid=" + user_id);
+    return axios.get(API_URL + user_id);
   }
   /*  orderGet1(user_id) {
     return axios.get(
