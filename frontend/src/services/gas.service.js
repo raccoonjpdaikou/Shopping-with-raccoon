@@ -1,12 +1,16 @@
 import axios from "axios";
+const API_URL = `${process.env.REACT_APP_SERVER_CONNECTION}`;
 
 class GasService {
   orderGet1(user_id) {
+    return axios.get(API_URL + "?uid=" + user_id);
+  }
+  /*  orderGet1(user_id) {
     return axios.get(
       "https://script.google.com/macros/s/AKfycbyvjLtLKOiHiZA_TYLZg6xKflV0UyJBOdkIDCPQ1B00oT8knEHBlz60xNkhhmBuyTfWiQ/exec?uid=" +
         user_id
     );
-  }
+  } */
   /*跟團 */
   orderGet2(user_id) {
     return axios.get(

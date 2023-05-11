@@ -1,6 +1,8 @@
 const express = require("express");
+const http = require("http");
 const app = express();
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const authRoute = require("./routes").auth;
 const guestRoute = require("./routes").guest;
@@ -55,6 +57,22 @@ app.use(
   passport.authenticate("jwt", { session: false }),
   commentRoute
 );
+
+app.all("/api/gas/data1", (req, res) => {
+  // 發送HTTP請求到Google Apps Script
+  let options = {
+    hostname: "script.google.com",
+    port: 80,
+    path: "/macros/s/AKfycbyvjLtLKOiHiZA_TYLZg6xKflV0UyJBOdkIDCPQ1B00oT8knEHBlz60xNkhhmBuyTfWiQ/exec",
+    method: req.method,
+    headers: req.headers,
+  };
+  let proxyReq = http.request(options, (proxyRes) => {
+    res.writeHead(proxyRes.statusCode, proxyRes.headers);
+    proxyRes.pipe(res);
+  });
+  req.pipe(proxyReq);
+});
 
 app.listen(8080, () => {
   console.log("後端伺服器聆聽在port 8080...");
