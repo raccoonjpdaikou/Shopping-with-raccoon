@@ -1,7 +1,5 @@
 const express = require("express");
-const httpProxy = require("http-proxy");
 const app = express();
-const proxy = httpProxy.createProxyServer();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes").auth;
@@ -58,10 +56,6 @@ app.use(
   commentRoute
 );
 
-app.all("/api/*", (req, res) => {
-  proxy.web(req, res, { target: "http://localhost:8080" });
-});
-
-app.listen(3030, () => {
-  console.log("代理伺服器正在監聽在port 3030...");
+app.listen(8080, () => {
+  console.log("代理伺服器正在監聽在port 8080...");
 });
