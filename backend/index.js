@@ -1,5 +1,7 @@
 const express = require("express");
+const httpProxy = require("http-proxy");
 const app = express();
+const proxy = httpProxy.createProxyServer();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes").auth;
@@ -32,6 +34,13 @@ app.use(cors());
 app.use("/api/user", authRoute);
 app.use("/api", guestRoute);
 
+app.use("/", (req, res) => {
+  // 將請求轉發到你的 Google Apps Script URL
+  proxy.web(req, res, {
+    target:
+      "https://script.google.com/macros/s/AKfycbziVmtE-ysNtsceAgSLHZgGcb8TYhT3GnTYDRD8pc4sO6vcL-E0QC998lkHkHyyoPUi/exec",
+  });
+});
 // 以下route應該被jwt保護
 // 如果request header內部沒有jwt，則request就會被視為是unauthorized
 
