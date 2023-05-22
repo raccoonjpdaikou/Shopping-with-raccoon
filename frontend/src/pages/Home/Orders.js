@@ -206,20 +206,8 @@ const Orders = () => {
         setIsGet(true);
       });
   };
-  const testOrders = (id) => {
-    GasService.orderGet4(id)
-      .then((data) => {
-        console.log("1");
-        console.log(data);
-      })
-      .catch((e) => {
-        console.log("2");
-        console.log(e);
-      });
-  };
 
   useEffect(() => {
-    testOrders(tid);
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
