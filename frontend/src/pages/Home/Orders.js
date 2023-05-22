@@ -174,7 +174,7 @@ const Orders = () => {
   const getOrders = (id) => {
     GasService.orderGet1(id)
       .then((data) => {
-        setData1(data.data);
+        setData1(data.data.data);
         setStatusMsg("");
         setIsGet(true);
       })
@@ -185,7 +185,7 @@ const Orders = () => {
       });
     GasService.orderGet2(id)
       .then((data) => {
-        setData2(data.data);
+        setData2(data.data.data);
         setStatusMsg("");
         setIsGet(true);
       })
@@ -196,7 +196,7 @@ const Orders = () => {
       });
     GasService.orderGet3(id)
       .then((data) => {
-        setData3(data.data);
+        setData3(data.data.data);
         setStatusMsg("");
         setIsGet(true);
       })
