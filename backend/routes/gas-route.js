@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const axios = require("axios");
 
 router.use((req, res, next) => {
   console.log("gas route正在接受一個request...");
@@ -13,12 +14,13 @@ router.post("/order1", async (req, res) => {
     )
     .then((data) => {
       return res.send({
-        data: data,
+        message: "獲得資料成功",
+        data: data.data,
       });
     })
     .catch((e) => {
       console.log(e);
-      return res.status(400).send("伺服器出現問題");
+      return res.status(400).send(req.body.username);
     });
 });
 module.exports = router;

@@ -1,7 +1,12 @@
 import axios from "axios";
-const API_URL = `${process.env.REACT_APP_SERVER_CONNECTION}gas/`;
+const API_URL = `${process.env.REACT_APP_SERVER_CONNECTION}gas`;
 
 class GasService {
+  orderGet4(username) {
+    return axios.post(API_URL + "/order1", {
+      username,
+    });
+  }
   orderGet1(user_id) {
     return axios.get(
       "https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbyvjLtLKOiHiZA_TYLZg6xKflV0UyJBOdkIDCPQ1B00oT8knEHBlz60xNkhhmBuyTfWiQ/exec?uid=" +

@@ -114,6 +114,7 @@ const LgTable = ({ data, title, key1, key2, key3, key4, headValue, type }) => {
 };
 
 const Orders = () => {
+  let tid = "@pandora_btt";
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [description, setDescription] = useState(true);
   const [message, setMessage] = useState();
@@ -205,8 +206,20 @@ const Orders = () => {
         setIsGet(true);
       });
   };
+  const testOrders = (id) => {
+    GasService.orderGet4(id)
+      .then((data) => {
+        console.log("1");
+        console.log(data);
+      })
+      .catch((e) => {
+        console.log("2");
+        console.log(e);
+      });
+  };
 
   useEffect(() => {
+    testOrders(tid);
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
