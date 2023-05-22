@@ -10,10 +10,9 @@ const Homepage = () => {
         <div className="section">
           <h1>待更新</h1>
           <ol>
-            <li>訂單查詢頁面</li>
+            <li>首頁</li>
             <li>登入頁面rwd</li>
             <li>dashbord的navbar</li>
-            <li>首頁</li>
             <li>ipad的navbar</li>
             <li>加一個scroll to top(SPA的緣故)</li>
             <li>註冊密碼需要先check</li>

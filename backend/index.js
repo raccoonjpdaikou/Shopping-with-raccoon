@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes").auth;
 const guestRoute = require("./routes").guest;
+const gasRoute = require("./routes").gas;
 const infoRoute = require("./routes").info;
 const rateRoute = require("./routes").rate;
 const commentRoute = require("./routes").comment;
@@ -31,6 +32,7 @@ app.use(cors());
 //auth 要確定是否是存在於後台的帳號 並判斷客戶或管理者
 app.use("/api/user", authRoute);
 app.use("/api", guestRoute);
+app.use("/api/gas", gasRoute);
 
 // 以下route應該被jwt保護
 // 如果request header內部沒有jwt，則request就會被視為是unauthorized
