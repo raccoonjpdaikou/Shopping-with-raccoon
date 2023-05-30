@@ -20,8 +20,8 @@ function App() {
   return (
     <HashRouter>
       <Routes>
+        <Route index element={<Homepage />}></Route>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Homepage />}></Route>
           <Route path="estimate" element={<Estimate />}></Route>
           <Route path="orders" element={<Orders />}></Route>
           <Route path="comments" element={<Comments />}></Route>

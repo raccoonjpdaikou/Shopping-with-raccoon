@@ -1,15 +1,5 @@
 export const homeTitleData = [
   {
-    id: "index",
-    title: "小浣熊代購趣",
-    content: ["facebook", "plurk"],
-  },
-  {
-    id: "announcements",
-    title: "公告區",
-    content: [],
-  },
-  {
     id: "how",
     title: "代購流程",
     content: [

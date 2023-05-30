@@ -6,7 +6,7 @@ import Footer from "../../components/Footer";
 
 const SmTable = ({ data, title, key1, key2, key3, headValue, type }) => {
   return (
-    <div className={`${data[1] == undefined && "d-none"}`}>
+    <div className={`${data[1] === undefined && "d-none"}`}>
       <h5>{title}</h5>
       {data.map((item, x) =>
         x > 0 ? (
@@ -55,7 +55,7 @@ const SmTable = ({ data, title, key1, key2, key3, headValue, type }) => {
 };
 const LgTable = ({ data, title, key1, key2, key3, key4, headValue, type }) => {
   return (
-    <div className={`${data[1] == undefined && "d-none"}`}>
+    <div className={`${data[1] === undefined && "d-none"}`}>
       <h5>{title}</h5>
       {data.map((item, x) =>
         x > 0 ? (
@@ -114,7 +114,6 @@ const LgTable = ({ data, title, key1, key2, key3, key4, headValue, type }) => {
 };
 
 const Orders = () => {
-  let tid = "@pandora_btt";
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [description, setDescription] = useState(true);
   const [message, setMessage] = useState();
@@ -163,7 +162,7 @@ const Orders = () => {
 
   const handleLogin = async (e) => {
     try {
-      let res = await AuthService.login(data.username, data.password);
+      await AuthService.login(data.username, data.password);
       setDescription(false);
       getOrders(data.username);
     } catch (e) {
@@ -385,7 +384,7 @@ const Orders = () => {
           />
         </div>
       </div>
-      <div className="order-footer sticky-bottom bg-primary py-2">
+      <div className="order-footer sticky-bottom bg-primary py-2 container">
         <Footer />
       </div>
     </div>

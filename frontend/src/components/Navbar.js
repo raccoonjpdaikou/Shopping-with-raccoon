@@ -17,7 +17,7 @@ const NavLink = ({ route, title, links, hashlink }) => {
           className={links + ` fs-7 nav-link`}
           to={route}
           spy={true}
-          offset={-64}
+          offset={-80}
         >
           {title}
         </LinkS>
@@ -54,7 +54,7 @@ const OffLink = ({ route, title, close, links, hashlink }) => {
           }
           to={route}
           spy={true}
-          offset={-64}
+          offset={-80}
           onClick={close}
         >
           <h6 className="off-link m-0 w-100 text-center">{title}</h6>
@@ -166,7 +166,7 @@ const Navbar = (info) => {
             <LinkS
               className={links + ` navbar-brand nav-brand-layout`}
               to="index"
-              offset={-64}
+              offset={-80}
             >
               <NavBrand />
             </LinkS>

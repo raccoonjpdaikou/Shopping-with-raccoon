@@ -1,7 +1,6 @@
 .announce-layout {
-  margin-top: 4rem;
   width: 100%;
-  min-height: calc(100vh - 4rem);
+  height: calc(100vh - 5rem);
   padding: 1.25rem;
 }
 
@@ -12,7 +11,7 @@
   background-color: #caad5f;
   display: flex;
   overflow-y: scroll;
-  height: 75vh;
+  height: calc(100vh - 12rem);
   padding: 2rem;
   margin-top: 1.5rem;
   margin-left: 2rem;

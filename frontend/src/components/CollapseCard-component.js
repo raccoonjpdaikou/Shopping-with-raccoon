@@ -87,9 +87,9 @@ const CollapseCardComponent = ({ data, admin, openModal, type }) => {
         <div className="collapse-hidden" style={{ height }}>
           {content.hidden && (
             <div ref={ref}>
-              {open && <div className="p-3">{content.hidden}</div>}
+              {open && <div className="p-2">{content.hidden}</div>}
               <div className={`${admin && "d-none"}`}>
-                <p className="fs-8 m-0 text-end p-2">
+                <p className="fs-8 m-0 text-end">
                   {format(parseISO(data.updatedAt), "yyyy/MM/dd  HH:mm:ss O")}
                 </p>
               </div>
