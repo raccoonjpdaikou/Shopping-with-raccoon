@@ -1,0 +1,18 @@
+.faq-content {
+  padding: 1rem 1.5rem;
+  p {
+    color: #fff;
+    margin: 0;
+  }
+}
+.faq-q,
+.faq-a {
+  display: inline-block;
+  padding: 0.5rem;
+}
+.faq-q {
+  background-color: #7d6c46;
+}
+.faq-a {
+  background-color: #465d4c;
+}

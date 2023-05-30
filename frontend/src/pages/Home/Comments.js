@@ -28,7 +28,6 @@ const Comments = () => {
     GuestService.reply()
       .then((data) => {
         setReplys(data.data);
-        console.log(data.data);
       })
       .catch((e) => {
         console.log(e.response);

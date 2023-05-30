@@ -149,7 +149,7 @@ const Orders = () => {
       setStatusMsg("查詢中...");
       try {
         let res = await AuthService.check(data.username);
-        console.log(res);
+        /* console.log(res); */
         if (res.status === 200) {
           handleLogin();
         }
@@ -217,7 +217,7 @@ const Orders = () => {
   }, []);
   return (
     <div className="order">
-      <div className="container section order-section">
+      <div className="container order-section">
         <h1 className="mb-3">訂單查詢</h1>
         <form>
           <div className="input-layout">

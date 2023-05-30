@@ -23,7 +23,7 @@ const InfoModal = ({ type, data, handlePost, handlePatch, handleDelete }) => {
     else setInfo(initValue);
   };
   const handleSaveClick = () => {
-    console.log(info);
+    /* console.log(info); */
     if (info.title === "") {
       setMessage(true);
     } else if (type) {

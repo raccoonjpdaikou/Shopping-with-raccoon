@@ -51,7 +51,7 @@ const Announce = () => {
       });
   };
   const handleDelete = (_id) => {
-    console.log(_id);
+    /* console.log(_id); */
     closeModal();
     InfoService.delete(_id)
       .then((data) => {

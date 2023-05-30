@@ -1,4 +1,48 @@
-.how-layout {
-  width: 100%;
-  min-height: calc(100vh - 5rem);
+.how-square {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.how-step1,
+.how-step2,
+.how-step3,
+.how-step4 {
+  width: 20rem;
+  height: 11rem;
+  border-radius: 1.5rem 0 0 1.5rem;
+  margin-right: -1.5rem;
+  padding: 2rem 3rem 2rem 2rem;
+  display: flex;
+  p {
+    display: flex;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}
+.how-icon {
+  margin-top: 0.15rem;
+  font-size: 1.2rem;
+  margin-right: 0.3rem;
+}
+.how-step1 {
+  z-index: -4;
+  background-color: #e2a050;
+}
+.how-step2 {
+  z-index: -3;
+  background-color: #e8b26f;
+}
+.how-step3 {
+  z-index: -2;
+  background-color: #eec696;
+}
+.how-step4 {
+  margin-right: 0rem;
+  padding: 2rem;
+  width: 21.5rem;
+  border-radius: 1.5rem;
+  z-index: -1;
+  background-color: #f4d9b9;
 }

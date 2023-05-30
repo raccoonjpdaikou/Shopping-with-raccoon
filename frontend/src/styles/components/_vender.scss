@@ -1,5 +1,5 @@
 :root {
-  scroll-padding-top: 4rem;
+  scroll-padding-top: 5rem;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -13,6 +13,10 @@ input::-webkit-inner-spin-button {
   width: 100%;
   min-height: calc(100vh - 5rem);
 }
+.homepage-section-layout {
+  width: 100%;
+  padding: 1.25rem;
+}
 .required-star {
   color: red;
 }
@@ -20,6 +24,9 @@ input::-webkit-inner-spin-button {
 h1 {
   font-weight: 700;
   @include font-size(2.5rem);
+}
+h2 {
+  font-weight: 700;
 }
 p {
   @include rfs(0.8rem, margin-bottom);

@@ -1,6 +1,9 @@
 .order {
   .order-section {
     padding: 1rem 1rem;
+    margin-top: 5rem;
+    width: 100%;
+    min-height: calc(100vh - 10.2rem);
   }
   .btn-comfirm {
     padding-left: 3.75rem;
@@ -73,6 +76,7 @@
   .order-footer {
     z-index: 1;
   }
+
   @media (min-width: 480px) {
     .input-layout {
       flex-direction: row;
@@ -81,7 +85,10 @@
       margin-right: 1rem;
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: 481px) {
+    .order-section {
+      min-height: calc(100vh - 8.5rem);
+    }
   }
 
   @media (min-width: 1024px) {

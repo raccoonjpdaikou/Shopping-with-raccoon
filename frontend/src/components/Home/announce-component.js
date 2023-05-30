@@ -20,8 +20,8 @@ const AnnounceComponent = () => {
   }, [setInfos]);
 
   return (
-    <div className="announce-layout" id="announcements">
-      <h2 className="announce-title">最新消息</h2>
+    <div className="homepage-section-layout" id="announcements">
+      <h2>最新消息</h2>
       <div className="announce-content-layout border">
         {infos !== undefined &&
           infos
