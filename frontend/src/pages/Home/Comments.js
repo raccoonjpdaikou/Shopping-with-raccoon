@@ -66,7 +66,7 @@ const Comments = () => {
 
   return (
     <div className="position-relative">
-      <div className="comment-layout section">
+      <div className="comment-layout">
         <ModalComponent>
           <div className="modal-body comment-modal">
             <div className="comment-modal-close">
