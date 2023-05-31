@@ -22,7 +22,7 @@ const AnnounceComponent = () => {
   return (
     <div className="homepage-section-layout" id="announcements">
       <h2>最新消息</h2>
-      <div className="announce-content-layout border">
+      <div className="announce-content-layout">
         {infos !== undefined &&
           infos
             .slice(0)

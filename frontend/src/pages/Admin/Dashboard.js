@@ -26,8 +26,8 @@ const Dashboard = () => {
     <>
       <div className={open + ` d-flex`}>
         <aside className="sidebar vh-100 border-end d-flex flex-column">
-          <div className="d-flex flex-column overflow-auto">
-            <ul className="list-group list-group-flush">
+          <div className="d-flex flex-column overflow-auto h-100 justify-content-between">
+            <ul className="list-group list-group-flush admin-sidebar-link">
               <Link className="list-group-item py-3" to="rate">
                 日幣匯率
               </Link>
@@ -37,9 +37,44 @@ const Dashboard = () => {
               <Link className="list-group-item py-3" to="meh">
                 留言板
               </Link>
-              <Link className="list-group-item py-3 border-end" to="user">
+              <Link className="list-group-item py-3" to="user">
                 密碼管理
               </Link>
+            </ul>
+            <ul className="list-group list-group-flush admin-sidebar-hp-link">
+              <Link className="list-group-item py-3" to="/" target="_blank">
+                回首頁
+              </Link>
+              <Link
+                className="list-group-item py-3"
+                to="/orders"
+                target="_blank"
+              >
+                訂單查詢
+              </Link>
+              <Link
+                className="list-group-item py-3"
+                to="/comments"
+                target="_blank"
+              >
+                留言板
+              </Link>
+              <Link
+                className="list-group-item py-3"
+                to="/estimate"
+                target="_blank"
+              >
+                費用估計
+              </Link>
+              <span className="admin-dashboard-logout">
+                <Link
+                  className="list-group-item py-3"
+                  to="/login"
+                  onClick={handleLogout}
+                >
+                  登出
+                </Link>
+              </span>
             </ul>
           </div>
         </aside>
@@ -54,50 +89,6 @@ const Dashboard = () => {
               <BsArrowsAngleExpand />
             </Link>
             <h4 className="my-auto mx-4">浣熊工作區</h4>
-
-            <div className="ms-auto my-auto">
-              <Link to="/" target="_blank">
-                <button
-                  type="button"
-                  className="btn btn-outline-raccoon btn-sm me-3 px-3 rounded-pill align-self-center"
-                >
-                  回首頁
-                </button>
-              </Link>
-              <Link to="/orders" target="_blank">
-                <button
-                  type="button"
-                  className="btn btn-outline-raccoon btn-sm me-3 px-3 rounded-pill align-self-center"
-                >
-                  訂單查詢
-                </button>
-              </Link>
-              <Link to="/comments" target="_blank">
-                <button
-                  type="button"
-                  className="btn btn-outline-raccoon btn-sm me-3 px-3 rounded-pill align-self-center"
-                >
-                  留言板
-                </button>
-              </Link>
-              <Link to="/estimate" target="_blank">
-                <button
-                  type="button"
-                  className="btn btn-outline-raccoon btn-sm me-3 px-3 rounded-pill align-self-center"
-                >
-                  費用估計
-                </button>
-              </Link>
-              <Link to="/login">
-                <button
-                  type="button"
-                  className="btn btn-success btn-sm px-3 mx-4"
-                  onClick={handleLogout}
-                >
-                  登出
-                </button>
-              </Link>
-            </div>
           </div>
           <Outlet />
         </main>

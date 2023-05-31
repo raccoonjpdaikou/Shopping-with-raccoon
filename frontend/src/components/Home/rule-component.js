@@ -4,7 +4,7 @@ const RuleComponent = () => {
   return (
     <section className="homepage-section-layout" id="rule">
       <h2>代購規則</h2>
-      <div className="rule-content">
+      <div className="homepage-content-layout">
         <h3>代購前請參閱下列規則及注意事項</h3>
         <ul>
           <li>

@@ -1,32 +1,37 @@
 .announce-content-layout {
   flex-direction: column;
   border-radius: 0.5%;
-  border-color: #465d4c;
   background-color: #caad5f;
   display: flex;
   overflow-y: scroll;
-  height: calc(100vh - 12rem);
-  padding: 2rem;
-  margin-top: 1.5rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-@include media-breakpoint-down(md) {
-  .announce-content-layout {
-    margin-top: 0.5rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  .announce-layout {
+  height: 12rem;
+  padding: 0.5rem;
+  margin: auto;
+  max-width: 1080px;
+  .collapse-layout {
+    border-radius: 0.5rem;
     padding: 0.5rem;
   }
+  .collapseh-icon {
+    font-size: 1rem;
+    margin-right: 0rem;
+  }
+  .collapse-title {
+    font-size: 1rem;
+    margin-top: 0rem;
+  }
+  .collapse-reply-text {
+    padding: 0 0.5rem !important;
+  }
+  .collapse-reply-time {
+    margin-top: 0.25rem;
+    p {
+      font-size: 0.2rem !important;
+    }
+  }
+}
+@media (min-width: 768px) {
   .announce-content-layout {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0.5rem 0 0.5rem 0.5rem;
+    height: 20rem;
   }
 }

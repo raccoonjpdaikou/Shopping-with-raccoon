@@ -108,13 +108,13 @@ const NavBrand = () => {
   );
 };
 
-const Navbar = (info) => {
+const Navbar = (pathname) => {
   const [open, setOpen] = useState("");
   const openHandler = () => {
     setOpen("");
   };
-  const links = info.info ? "" : "d-none";
-  const hashlink = info.info ? "d-none" : "";
+  const links = pathname.info === "/" ? "" : "d-none";
+  const hashlink = pathname.info === "/" ? "d-none" : "";
 
   return (
     <>

@@ -1,34 +1,38 @@
 .how-square {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  margin: 1.5rem 0;
+  align-items: center;
 }
-
 .how-step1,
 .how-step2,
 .how-step3,
 .how-step4 {
-  width: 20rem;
-  height: 11rem;
-  border-radius: 1.5rem 0 0 1.5rem;
-  margin-right: -1.5rem;
-  padding: 2rem 3rem 2rem 2rem;
+  width: 15rem;
+  height: 11.5rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  margin-top: -1.5rem;
+  padding: 0.5rem 1.5rem 0 1.5rem;
   display: flex;
+  flex-direction: column;
   p {
     display: flex;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
-.how-icon {
-  margin-top: 0.15rem;
-  font-size: 1.2rem;
-  margin-right: 0.3rem;
+
+.how-num {
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.5rem;
+  border-bottom: 1px solid;
+  margin-bottom: 1rem;
 }
 .how-step1 {
   z-index: -4;
   background-color: #e2a050;
+  margin-top: 0rem;
 }
 .how-step2 {
   z-index: -3;
@@ -39,10 +43,68 @@
   background-color: #eec696;
 }
 .how-step4 {
-  margin-right: 0rem;
-  padding: 2rem;
-  width: 21.5rem;
+  height: 12.25rem;
   border-radius: 1.5rem;
   z-index: -1;
   background-color: #f4d9b9;
+}
+
+@media (min-width: 667px) {
+  .how-part {
+    display: flex;
+  }
+  .how-step2 {
+    margin-top: 0rem;
+  }
+
+  .how-step3 {
+    height: 12.25rem;
+    border-radius: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .how-square {
+    flex-direction: row;
+  }
+  .how-step1,
+  .how-step2,
+  .how-step3,
+  .how-step4 {
+    width: 12rem;
+    height: 13.5rem;
+    margin-top: 0rem;
+    margin-right: -1.5rem;
+    padding-right: 2.5rem;
+    border-radius: 1.5rem 0 0 1.5rem;
+  }
+  .how-step4 {
+    width: 12.75rem;
+    margin-right: 0;
+    border-radius: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .how-step1,
+  .how-step2,
+  .how-step3,
+  .how-step4 {
+    width: 15rem;
+    height: 10.5rem;
+  }
+  .how-step4 {
+    width: 15.75rem;
+  }
+}
+@media (min-width: 1440px) {
+  .how-step1,
+  .how-step2,
+  .how-step3,
+  .how-step4 {
+    width: 18rem;
+    height: 10.5rem;
+  }
+  .how-step4 {
+    width: 18.75rem;
+  }
 }

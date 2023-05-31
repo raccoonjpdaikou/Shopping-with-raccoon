@@ -15,10 +15,12 @@ import Announce from "./pages/Admin/Announce";
 import Meh from "./pages/Admin/Meh";
 import User from "./pages/Admin/User";
 import Dashboard from "./pages/Admin/Dashboard";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         <Route index element={<Homepage />}></Route>
         <Route path="/" element={<Layout />}>

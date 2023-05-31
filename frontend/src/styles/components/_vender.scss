@@ -7,15 +7,10 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 .section {
   margin-top: 5rem;
   width: 100%;
   min-height: calc(100vh - 5rem);
-}
-.homepage-section-layout {
-  width: 100%;
-  padding: 1.25rem;
 }
 .required-star {
   color: red;

@@ -3,10 +3,10 @@ import React from "react";
 import Navbar from "./Navbar";
 
 const Layout = () => {
-  const info = useLocation();
+  const { pathname } = useLocation();
   return (
     <>
-      <Navbar info={info.pathname === "/"} />
+      <Navbar info={pathname} />
       <Outlet />
     </>
   );

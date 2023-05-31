@@ -59,6 +59,22 @@ $topbar-height: 3.5rem;
   height: 75vh;
   margin-top: 2rem;
 }
+.admin-sidebar-link {
+  a {
+    color: #4d5139;
+  }
+}
+.admin-sidebar-hp-link {
+  a {
+    background-color: #7d6c46;
+    color: #fff;
+  }
+}
+.admin-dashboard-logout {
+  a {
+    background-color: #4d5139;
+  }
+}
 .rate-layout {
   height: calc(100vh - 3.5rem);
 }

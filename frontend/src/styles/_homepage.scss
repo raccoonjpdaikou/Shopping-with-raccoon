@@ -1,0 +1,58 @@
+/* 不含how/announces */
+
+.homepage-section-layout {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  padding: 1.25rem;
+}
+.homepage-content-layout {
+  margin: 1rem 1.5rem;
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.fee-content {
+  p {
+    display: flex;
+    margin: 0;
+    font-size: 1rem;
+  }
+}
+.fee-icon {
+  margin-right: 0.3rem;
+  font-size: 0.875rem;
+}
+
+.faq-content {
+  p {
+    color: #fff;
+    margin: 0;
+  }
+}
+.faq-text {
+  display: inline-flex;
+  flex-direction: column;
+}
+.faq-q,
+.faq-a {
+  padding: 0.5rem;
+  display: flex;
+}
+.faq-q {
+  background-color: #7d6c46;
+}
+.faq-a {
+  background-color: #465d4c;
+}
+.faq-icon {
+  border-right: 1px #fff solid;
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+.faq-icon-text {
+  padding-right: 0.4rem;
+  font-family: serif;
+}

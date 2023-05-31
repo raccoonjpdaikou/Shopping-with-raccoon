@@ -44,31 +44,6 @@ const Homepage = () => {
         <div className={`bg-primary py-2 ${!showNavbar && "d-none"}`}>
           <Footer />
         </div>
-
-        {/* <div className="section">
-           <h1>待更新</h1>
-          <ol>
-            <li>首頁</li>
-            <li>登入頁面rwd</li>
-            <li>dashbord的navbar</li>
-            <li>ipad的navbar</li>
-            <li>加一個scroll to top(SPA的緣故)</li>
-            <li>註冊密碼需要先check</li>
-            SCROLL的電腦版樣式
-            到估價訂單流岩板 active btn color
-          </ol>
-          <h1>有空再處理</h1>
-          <ol>
-            <li>後台的sidebar跟navbar(active功能)</li>
-            <li>前後台的公告+後台的留言 要改翻頁模式</li>
-            <li>電腦板首頁加一個回到頂部的功能</li>
-          </ol>
-          <h1>已知bug</h1>
-          <ol>
-            <li>後台留言編輯過後會回到沒篩選過後的樣子(即全部類別)</li>
-            <li>公告跟留言編輯過後不存檔打開不會重置</li>
-          </ol> 
-        </div> */}
       </div>
     </>
   );
