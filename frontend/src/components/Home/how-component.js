@@ -12,7 +12,7 @@ const HowComponent = () => {
           </div>
           <div className="how-step2">
             <div className="how-num">2</div>
-            <p>確認報價後先轉帳商品本體金額，確認入帳後會幫忙下單</p>
+            <p>確認報價後需先轉帳商品本體金額，確認入帳後會幫忙下單</p>
           </div>
         </div>
         <div className="how-part">

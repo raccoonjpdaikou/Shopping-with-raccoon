@@ -7,12 +7,11 @@ const FeeComponent = () => {
       <h2>收費方式</h2>
       <div className="fee-content homepage-content-layout">
         <p>
-          個人委託：商品日幣含稅價&thinsp;×&thinsp;（郵局告牌匯率+0.05）＋100元手續費
+          個人委託：商品日幣含稅價&thinsp;×&thinsp;（郵局告牌匯率+0.055）＋100元手續費
         </p>
         <p>
           空運國際運費（集運）：每100公克21元
-          購買不可使用轉運倉址商品，另收代收費：100～150元
-          40元以上，未滿100公克以100公克計算
+          購買40元以上，未滿100公克以100公克計算
         </p>
 
         <p>
@@ -25,7 +24,7 @@ const FeeComponent = () => {
           <span className="fee-icon">
             <BsFillExclamationCircleFill color="#7d6c46" />
           </span>
-          購買不可使用轉運倉址商品，另收代收費：100～150元
+          購買不可使用轉運倉址之商品，另收代收費：100～150元
         </p>
         <p>
           <span className="fee-icon">
