@@ -1,3 +1,4 @@
+$comment-height: -webkit-fill-available;
 @media (min-width: 0px) {
   .comment-layout {
     ::-webkit-scrollbar-thumb {
@@ -7,16 +8,16 @@
     .navbar {
       z-index: 1000;
     }
+    max-height: -webkit-fill-available;
   }
   .comment-main {
-    max-height: calc(100vh - 5rem);
-    max-height: calc(var(--doc-height) - 5rem);
+    height: 100%;
     overflow-y: scroll;
     padding-bottom: 4rem;
   }
   .comment-bg {
     position: absolute;
-    min-height: calc(100vh - 5rem);
+    height: 100%;
     width: 80%;
     margin: 0 10%;
     background-image: url("../../public/comment_texture.png");
@@ -29,6 +30,7 @@
     display: inline-flex;
     max-width: 100vw;
     overflow-x: hidden;
+    max-height: calc(100vh - 5rem);
   }
   .comment-toggle-btn {
     width: 2.4rem;
