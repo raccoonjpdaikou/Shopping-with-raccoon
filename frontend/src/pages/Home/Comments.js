@@ -49,9 +49,17 @@ const Comments = () => {
   const handleToggle = () => {
     setToggle(toggle ? false : true);
   };
+  const handleResize = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
+  };
   useEffect(() => {
     modal.current = new Modal("#Modal");
     getReply();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
