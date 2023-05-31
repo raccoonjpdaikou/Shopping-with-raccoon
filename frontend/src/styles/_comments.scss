@@ -5,14 +5,13 @@
     }
     display: flex;
     .navbar {
-      z-index: 1;
+      z-index: 1000;
     }
   }
   .comment-main {
     max-height: calc(100vh - 5rem);
     overflow-y: scroll;
     padding-bottom: 4rem;
-    z-index: -2;
   }
   .comment-bg {
     position: absolute;
