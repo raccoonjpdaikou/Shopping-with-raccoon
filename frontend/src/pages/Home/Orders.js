@@ -384,7 +384,7 @@ const Orders = () => {
           />
         </div>
       </div>
-      <div className="order-footer sticky-bottom bg-primary py-2 container">
+      <div className="order-footer bg-primary py-2 container">
         <Footer />
       </div>
     </div>

@@ -7,7 +7,7 @@ const FeeComponent = () => {
       <h2>收費方式</h2>
       <div className="fee-content homepage-content-layout">
         <p>
-          個人委託：商品日幣含稅價&thinsp;×&thinsp;（郵局告牌匯率+0.055）＋100元手續費
+          個人委託：商品日幣含稅價&thinsp;×&thinsp;（郵局告牌匯率＋0.055）＋100元手續費
         </p>
         <p>
           空運國際運費（集運）：每100公克21元
