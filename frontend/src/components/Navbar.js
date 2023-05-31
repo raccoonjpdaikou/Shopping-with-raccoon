@@ -1,6 +1,6 @@
 //真假值優化(參照setting頁)
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
@@ -115,7 +115,18 @@ const Navbar = (pathname) => {
   };
   const links = pathname.info === "/" ? "" : "d-none";
   const hashlink = pathname.info === "/" ? "d-none" : "";
-
+  const handleResize = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
+  };
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
       <div className={open}>

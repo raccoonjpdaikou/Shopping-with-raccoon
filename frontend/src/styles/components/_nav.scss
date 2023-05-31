@@ -60,10 +60,10 @@
   z-index: 999;
   transition: margin-top 0.3s;
   top: 0;
-  height: 100vh;
+  height: var(--doc-height);
 }
 .off-content {
-  height: 100vh;
+  height: var(--doc-height);
   overflow-y: scroll;
 }
 .off-toggle {
