@@ -1,6 +1,6 @@
 :root {
   scroll-padding-top: 5rem;
-  --doc-height: calc(100vh - 5rem);
+  --doc-height: calc(var(--vh, 1vh) * 100 - 5rem);
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
