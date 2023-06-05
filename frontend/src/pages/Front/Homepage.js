@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import IndexComponent from "../../components/Home/index-component";
-import AnnounceComponent from "../../components/Home/announce-component";
-import HowComponent from "../../components/Home/how-component";
-import FeeComponent from "../../components/Home/fee-component";
-import RuleComponent from "../../components/Home/rule-component";
-import FaqComponent from "../../components/Home/faq-component";
+import IndexComponent from "../../components/Homepage/index-component";
+import AnnounceComponent from "../../components/Homepage/announce-component";
+import HowComponent from "../../components/Homepage/how-component";
+import FeeComponent from "../../components/Homepage/fee-component";
+import RuleComponent from "../../components/Homepage/rule-component";
+import FaqComponent from "../../components/Homepage/faq-component";
 import Footer from "../../components/Footer";
 
 const Homepage = () => {

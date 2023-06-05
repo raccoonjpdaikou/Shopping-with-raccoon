@@ -118,6 +118,7 @@ const Orders = () => {
   const [description, setDescription] = useState(true);
   const [message, setMessage] = useState();
   const [statusMsg, setStatusMsg] = useState("");
+  //const [search, setSearch] = useState("");
   const [isSubmit, setIsSubmit] = useState();
   const [isGet, setIsGet] = useState(false);
   const [data, setData] = useState({
@@ -154,7 +155,6 @@ const Orders = () => {
           handleLogin();
         }
       } catch (e) {
-        setDescription(false);
         getOrders(data.username);
       }
     }
@@ -163,14 +163,18 @@ const Orders = () => {
   const handleLogin = async (e) => {
     try {
       await AuthService.login(data.username, data.password);
-      setDescription(false);
       getOrders(data.username);
     } catch (e) {
       setStatusMsg("帳號或密碼輸入錯誤");
+      setDescription(true);
+      setData1();
+      setData2();
+      setData3();
     }
   };
 
   const getOrders = (id) => {
+    setDescription(false);
     GasService.orderGet1(id)
       .then((data) => {
         setData1(data.data.data);
@@ -204,7 +208,20 @@ const Orders = () => {
         setStatusMsg("");
         setIsGet(true);
       });
+
+    /* if (
+      data1[1] == undefined &&
+      data2[1] == undefined &&
+      data3[1] == undefined
+    ) {
+      setDescription(true);
+    } else {
+      setDescription(false);
+    } */
   };
+  /* const handleSearch = async (e) => {
+    setSearch(e.target.value);
+  }; */
 
   useEffect(() => {
     const handleResize = () => {
@@ -321,6 +338,20 @@ const Orders = () => {
             </li>
           </ul>
         </div>
+        {/* <div className={`order-search ${description && "d-none"}`}>
+          <div className="pe-2 fw-bold fs-6 d-flex align-items-center">
+            搜尋
+          </div>
+          <div>
+            <input
+              id="username"
+              className="form-control"
+              name="search"
+              type="text"
+              onChange={(e)=>setSearch(e.target.value)}
+            />
+          </div>
+        </div> */}
 
         <div className={`sm-table ${screenWidth > 1024 && "d-none"}`}>
           <SmTable

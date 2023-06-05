@@ -1,10 +1,10 @@
 //真假值優化(參照setting頁)
 
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-import { navDataLink, navDataBtn } from "./nav-data";
 import { IconContext } from "react-icons";
 import { Link as LinkS } from "react-scroll";
 import { HashLink } from "react-router-hash-link";
@@ -109,6 +109,9 @@ const NavBrand = () => {
 };
 
 const Navbar = (pathname) => {
+  const navDatas = useSelector((state) => {
+    return state.nav[0];
+  });
   const [open, setOpen] = useState("");
   const openHandler = () => {
     setOpen("");
@@ -144,7 +147,7 @@ const Navbar = (pathname) => {
                 </IconContext.Provider>
               </Link>
               <ul className="nav d-flex flex-column align-items-center h-auto">
-                {navDataLink.map((item, index) => (
+                {navDatas.Link.map((item, index) => (
                   <OffLink
                     route={item.path}
                     title={item.title}
@@ -156,8 +159,7 @@ const Navbar = (pathname) => {
                 ))}
               </ul>
               <ul className="nav d-flex mt-auto">
-                {navDataBtn
-                  .slice(0)
+                {navDatas.Btn.slice(0)
                   .reverse()
                   .map((item, index) => (
                     <OffButton
@@ -190,7 +192,7 @@ const Navbar = (pathname) => {
             <div className="d-none d-lg-block">
               <div className="d-flex align-items-center">
                 <ul className="nav">
-                  {navDataLink.map((item, index) => (
+                  {navDatas.Link.map((item, index) => (
                     <NavLink
                       route={item.path}
                       title={item.title}
@@ -201,7 +203,7 @@ const Navbar = (pathname) => {
                   ))}
                 </ul>
                 <ul className="nav ps-5">
-                  {navDataBtn.map((item, index) => (
+                  {navDatas.Btn.map((item, index) => (
                     <NavButton
                       route={item.path}
                       title={item.title}

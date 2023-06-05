@@ -1,10 +1,14 @@
 //匯率需要從後台改
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import GuestService from "../../services/guest.service";
 import Footer from "../../components/Footer";
 
 const Estimate = () => {
+  const EstimateRuleDatas = useSelector((state) => {
+    return state.estimate;
+  });
   const [total, setTotal] = useState("");
   const [rate, setRate] = useState("");
   const { register, handleSubmit } = useForm({
@@ -39,40 +43,13 @@ const Estimate = () => {
               <div className="estimate-rule-content">
                 <h1 className="estimate-title">費用估價</h1>
                 <ol>
-                  <li>
-                    <p>
-                      同時委託的多項商品都可以算一筆委託手續費100元（5個賣場或網站以內），每多5個賣場或網站則會另外產生50元手續費
-                    </p>
-                    <p>
-                      ex.同時委託5個mercari賣場，委託手續費是100元，6~10個賣場是100+50=150元，11~15個賣場是100+50+50=200元，以此類推
-                    </p>
-                    <p>
-                      ex.同時委託同一個網站內的15項商品，委託收續費是100元；同時委託6個不同網站的商品，則委託收續費是100+50=150元
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      每日匯率適用到下一個營業日的早上8:59，超過時間則匯率會更改，報價也會不同喔！
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      單次委託的商品總額（日幣）低於1500日幣時，會另外加收手續費50元
-                    </p>
-                  </li>
-                  <li>
-                    <p>加成過後的報價總額（台幣）會無條件進位</p>
-                  </li>
-                  <li>
-                    <p>
-                      此報價系統只能計算可刷卡之普通商品通販網站的報價，其他支付方式、或香水等特殊商品，會產生其他費用
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      此報價系統僅供參考，正確報價還是以浣熊告知的金額為準喔！
-                    </p>
-                  </li>
+                  {EstimateRuleDatas.map((rule, index) => (
+                    <li key={index}>
+                      {rule.content.map((content, index2) => (
+                        <p key={index * 10 + index2}>{content}</p>
+                      ))}
+                    </li>
+                  ))}
                 </ol>
               </div>
             </div>
