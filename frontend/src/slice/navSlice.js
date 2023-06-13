@@ -9,7 +9,6 @@ export const navSlice = createSlice({
   name: "nav",
   initialState: [
     {
-      Title: "費用估計",
       Link: [
         {
           title: "公告區",
@@ -34,7 +33,7 @@ export const navSlice = createSlice({
       ],
       Btn: [
         {
-          title: "費用估計",
+          title: "費用估價",
           path: "estimate",
           icon: <IoCalculator />,
         },

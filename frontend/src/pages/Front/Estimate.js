@@ -64,7 +64,7 @@ const Estimate = () => {
               <form onSubmit={handleSubmit(sumHandler)}>
                 <div className="estimate-cal-input">
                   <label htmlFor="price" className="form-label">
-                    商品含稅日幣
+                    商品含稅金額(日幣)
                   </label>
                   <input
                     id="price"
@@ -75,7 +75,7 @@ const Estimate = () => {
                 </div>
                 <div className="estimate-cal-input">
                   <label htmlFor="deliveryFee" className="form-label">
-                    境內運費日幣
+                    境內運費(日幣)
                   </label>
                   <input
                     id="deliveryFee"
@@ -99,7 +99,7 @@ const Estimate = () => {
                 </div>
                 <div className="estimate-cal-input">
                   <label htmlFor="serviceFee" className="form-label">
-                    代購服務費
+                    代購服務費(台幣)
                   </label>
                   <input
                     id="serviceFee"
@@ -114,7 +114,7 @@ const Estimate = () => {
                   </button>
                 </div>
 
-                <label className="form-label">預估總金額</label>
+                <label className="form-label">預估總金額(台幣)</label>
                 <input
                   type="text"
                   className="form-control"

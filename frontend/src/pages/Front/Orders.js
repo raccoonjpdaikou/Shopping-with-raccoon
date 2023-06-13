@@ -323,19 +323,10 @@ const Orders = () => {
             】
           </p>
           <ul>
-            <li>已匯款：浣熊已確認到匯款</li>
-            <li>已下單：已下單完畢（詳細請確認原開團噗文，會有訂單截圖）</li>
-            <li>
-              入庫、轉／空運狀態請參考【
-              <Link
-                to="https://docs.google.com/spreadsheets/d/156CTsBneZ5QAPuIuLO2Ao0ES3O8FQgBFm3Kk_GHSDrA/edit?usp=sharing"
-                target="_blank"
-                className="link"
-              >
-                到貨行程表
-              </Link>
-              】
-            </li>
+            <li>集運中：表示商品已在集運倉庫</li>
+            <li>空運中/或只顯示空運批次：表示商品正在空運中</li>
+            <li>理貨中/抵台整理：到台理貨中</li>
+            <li>已寄出：商品已寄出</li>
           </ul>
         </div>
         {/* <div className={`order-search ${description && "d-none"}`}>
