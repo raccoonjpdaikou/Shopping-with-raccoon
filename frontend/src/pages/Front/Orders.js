@@ -8,48 +8,48 @@ const SmTable = ({ data, title, key1, key2, key3, headValue, type }) => {
   return (
     <div className={`${data[1] === undefined && "d-none"}`}>
       <h5>{title}</h5>
-      {data.map((item, x) =>
-        x > 0 ? (
-          <div key={key1 + x}>
-            <table>
-              {item.data.map((content, y) =>
-                y === 0 ? (
-                  <thead key={key2 + y}>
-                    <tr>
-                      <th colSpan="2">{data[0].data[headValue]}</th>
-                    </tr>
-                    <tr>
-                      <td colSpan="2">{item.data[headValue]}</td>
-                    </tr>
-                  </thead>
-                ) : null
-              )}
-
-              {item.data.map((content, y) =>
-                type && y > 1 ? (
-                  <tbody key={key3 + y}>
-                    <tr>
-                      <th>{data[0].data[y]}</th>
-                      <td>{content}</td>
-                    </tr>
-                  </tbody>
-                ) : null
-              )}
-              {item.data.map((content, y) =>
-                !type && y !== 0 && y !== 2 ? (
-                  <tbody key={key3 + y}>
-                    <tr>
-                      <th>{data[0].data[y]}</th>
-                      <td>{content}</td>
-                    </tr>
-                  </tbody>
-                ) : null
-              )}
-            </table>
-            <br />
-          </div>
-        ) : null
-      )}
+      {data &&
+        data.map((item, x) =>
+          x > 0 ? (
+            <div key={key1 + x}>
+              <table>
+                {item.data.map((content, y) =>
+                  y === 0 ? (
+                    <thead key={key2 + y}>
+                      <tr>
+                        <th colSpan="2">{data[0].data[headValue]}</th>
+                      </tr>
+                      <tr>
+                        <td colSpan="2">{item.data[headValue]}</td>
+                      </tr>
+                    </thead>
+                  ) : null
+                )}
+                {item.data.map((content, y) =>
+                  type && y > 1 ? (
+                    <tbody key={key3 + y}>
+                      <tr>
+                        <th>{data[0].data[y]}</th>
+                        <td>{content}</td>
+                      </tr>
+                    </tbody>
+                  ) : null
+                )}
+                {item.data.map((content, y) =>
+                  !type && y !== 0 && y !== 2 ? (
+                    <tbody key={key3 + y}>
+                      <tr>
+                        <th>{data[0].data[y]}</th>
+                        <td>{content}</td>
+                      </tr>
+                    </tbody>
+                  ) : null
+                )}
+              </table>
+              <br />
+            </div>
+          ) : null
+        )}
     </div>
   );
 };
@@ -161,15 +161,20 @@ const Orders = () => {
   };
 
   const handleLogin = async (e) => {
-    try {
-      await AuthService.login(data.username, data.password);
-      getOrders(data.username);
-    } catch (e) {
+    if (data.password !== "") {
+      await AuthService.login(data.username, data.password)
+        .then(() => {
+          getOrders(data.username);
+        })
+        .catch((e) => {
+          setStatusMsg("帳號或密碼輸入錯誤");
+          setDescription(true);
+          setData1([]);
+          setData2([]);
+          setData3([]);
+        });
+    } else {
       setStatusMsg("帳號或密碼輸入錯誤");
-      setDescription(true);
-      setData1();
-      setData2();
-      setData3();
     }
   };
 
@@ -209,15 +214,15 @@ const Orders = () => {
         setIsGet(true);
       });
 
-    /* if (
-      data1[1] == undefined &&
-      data2[1] == undefined &&
-      data3[1] == undefined
+    if (
+      data1[1] === undefined &&
+      data2[1] === undefined &&
+      data3[1] === undefined
     ) {
       setDescription(true);
     } else {
       setDescription(false);
-    } */
+    }
   };
   /* const handleSearch = async (e) => {
     setSearch(e.target.value);
