@@ -5,8 +5,8 @@ import GuestService from "../../services/guest.service";
 const AnnounceComponent = () => {
   const [infos, setInfos] = useState();
 
-  const getInfo = () => {
-    GuestService.info()
+  const getInfo = async () => {
+    await GuestService.info()
       .then((data) => {
         setInfos(data.data);
       })
@@ -17,7 +17,7 @@ const AnnounceComponent = () => {
 
   useEffect(() => {
     getInfo();
-  }, [setInfos]);
+  }, []);
 
   return (
     <div className="homepage-section-layout" id="announcements">

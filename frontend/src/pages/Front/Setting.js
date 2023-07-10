@@ -15,6 +15,7 @@ const Setting = () => {
   const [message, setMessage] = useState({});
   const [isSubmit, setIsSubmit] = useState();
   const modal = useRef(null);
+  const [btnDisable, setBtnDisable] = useState(false);
 
   const openModal = () => {
     modal.current.show();
@@ -83,7 +84,8 @@ const Setting = () => {
   }, [isSubmit]);
 
   const handleRegister = async () => {
-    AuthService.register(data.username, data.password, "customer")
+    setBtnDisable(true);
+    await AuthService.register(data.username, data.password, "customer")
       .then(() => {
         openModal();
         setTimeout(() => {
@@ -93,6 +95,7 @@ const Setting = () => {
       })
       .catch((e) => {
         setMessage({ username: "此帳號已經設定過密碼了" });
+        setBtnDisable(false);
       });
   };
 
@@ -213,7 +216,11 @@ const Setting = () => {
                   </div>
                 </div>
                 <div className="setting-btn">
-                  <button type="submit" className="btn btn-success px-5">
+                  <button
+                    type="submit"
+                    className="btn btn-success px-5"
+                    disabled={btnDisable}
+                  >
                     註冊密碼
                   </button>
                 </div>

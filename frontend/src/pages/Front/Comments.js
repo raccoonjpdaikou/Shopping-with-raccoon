@@ -11,6 +11,7 @@ const Comments = () => {
   const [replys, setReplys] = useState();
   const [comment, setComment] = useState();
   const [toggle, setToggle] = useState(1);
+  const [btnDisable, setBtnDisable] = useState(false);
   const modal = useRef(null);
 
   const openModal = () => {
@@ -33,17 +34,20 @@ const Comments = () => {
         console.log(e.response);
       });
   };
-  const handleSubmit = () => {
-    GuestService.comment(comment, false)
+  const handleSubmit = async () => {
+    setBtnDisable(true);
+    await GuestService.comment(comment, false)
       .then(() => {
         setComment("");
         openModal();
         setTimeout(() => {
           closeModal();
         }, "1000");
+        setBtnDisable(false);
       })
       .catch((e) => {
         console.log(e);
+        setBtnDisable(false);
       });
   };
   const handleToggle = () => {
@@ -160,6 +164,7 @@ const Comments = () => {
                 type="button"
                 className="btn btn-secondary"
                 onClick={handleSubmit}
+                disabled={btnDisable}
               >
                 送出
               </button>
