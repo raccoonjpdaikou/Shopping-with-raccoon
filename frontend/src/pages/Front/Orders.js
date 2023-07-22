@@ -121,6 +121,8 @@ const Orders = () => {
   //const [search, setSearch] = useState("");
   const [isSubmit, setIsSubmit] = useState();
   const [isGet, setIsGet] = useState(false);
+  const [isSetting, setIsSetting] = useState(false);
+  const [settingBtn, setSettingBtn] = useState(false);
   const [data, setData] = useState({
     username: "",
     password: "",
@@ -142,17 +144,23 @@ const Orders = () => {
   };
 
   const handleSubmit = async (e) => {
+    setData1([]);
+    setData2([]);
+    setData3([]);
+    setIsSetting(false);
     e.preventDefault();
     setIsSubmit(true);
     setIsGet(false);
     if (data.username === "") setMessage("該欄位為必填");
     else {
+      setDescription(true);
       setStatusMsg("查詢中...");
       try {
         let res = await AuthService.check(data.username);
         /* console.log(res); */
         if (res.status === 200) {
           handleLogin();
+          setIsSetting(true);
         }
       } catch (e) {
         getOrders(data.username);
@@ -168,61 +176,32 @@ const Orders = () => {
         })
         .catch((e) => {
           setStatusMsg("帳號或密碼輸入錯誤");
-          setDescription(true);
-          setData1([]);
-          setData2([]);
-          setData3([]);
         });
     } else {
       setStatusMsg("帳號或密碼輸入錯誤");
     }
   };
 
-  const getOrders = (id) => {
-    setDescription(false);
-    GasService.orderGet1(id)
-      .then((data) => {
-        setData1(data.data.data);
-        setStatusMsg("");
-        setIsGet(true);
-      })
-      .catch((e) => {
-        /* console.log(e); */
-        setStatusMsg("");
-        setIsGet(true);
-      });
-    GasService.orderGet2(id)
-      .then((data) => {
-        setData2(data.data.data);
-        setStatusMsg("");
-        setIsGet(true);
-      })
-      .catch((e) => {
-        /*console.log(e); */
-        setStatusMsg("");
-        setIsGet(true);
-      });
-    GasService.orderGet3(id)
-      .then((data) => {
-        setData3(data.data.data);
-        setStatusMsg("");
-        setIsGet(true);
-      })
-      .catch((e) => {
-        /* console.log(e); */
-        setStatusMsg("");
-        setIsGet(true);
-      });
-
-    if (
-      data1[1] === undefined &&
-      data2[1] === undefined &&
-      data3[1] === undefined
-    ) {
-      setDescription(true);
-    } else {
-      setDescription(false);
+  const getOrders = async (id) => {
+    try {
+      const data1 = await GasService.orderGet1(id);
+      setData1(data1.data.data);
+    } catch (error) {
+      /* console.log(error); */
     }
+    try {
+      const data2 = await GasService.orderGet2(id);
+      setData2(data2.data.data);
+    } catch (error) {
+      /* console.log(error); */
+    }
+    try {
+      const data3 = await GasService.orderGet3(id);
+      setData3(data3.data.data);
+    } catch (error) {
+      /* console.log(error); */
+    }
+    setIsGet(true);
   };
   /* const handleSearch = async (e) => {
     setSearch(e.target.value);
@@ -237,6 +216,25 @@ const Orders = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    if (
+      data1[1] !== undefined ||
+      data2[1] !== undefined ||
+      data3[1] !== undefined
+    ) {
+      setStatusMsg("");
+      if (isGet) {
+        setDescription(false);
+        if (!isSetting) setSettingBtn(true);
+      }
+    } else {
+      if (isGet) {
+        setStatusMsg("查無資料！");
+      }
+    }
+  }, [data1, data2, data3]);
+
   return (
     <div className="order">
       <div className="container order-section">
@@ -272,7 +270,7 @@ const Orders = () => {
             </div>
           </div>
           <div className="input-btn mb-3">
-            <button className="btn btn-info me-3">
+            <button className={`${!settingBtn && "d-none"} btn btn-info me-3`}>
               <Link className="nav-link" to="/setting">
                 設定密碼
               </Link>
@@ -289,18 +287,6 @@ const Orders = () => {
         <div className={`status-message ${!statusMsg && "d-none"}`}>
           {statusMsg}
         </div>
-        <div
-          className={`status-message ${
-            (data1[1] !== undefined ||
-              data2[1] !== undefined ||
-              data3[1] !== undefined ||
-              !isGet) &&
-            "d-none"
-          }`}
-        >
-          查無資料！
-        </div>
-
         <div className={`description ${!description && "d-none"}`}>
           <h6 className="fw-bold text-danger">【查詢系統使用說明】</h6>
           <ol>
