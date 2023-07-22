@@ -148,6 +148,7 @@ const Orders = () => {
     setData2([]);
     setData3([]);
     setIsSetting(false);
+    setSettingBtn(false);
     e.preventDefault();
     setIsSubmit(true);
     setIsGet(false);
