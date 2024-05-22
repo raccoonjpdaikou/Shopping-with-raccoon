@@ -6,7 +6,7 @@ if (localStorage.getItem("raccoon")) {
   token = "";
 }
 axios.defaults.headers.common["Authorization"] = token;
-const API_URL = `${process.env.REACT_APP_SERVER_CONNECTION}admin/user`;
+const API_URL = `http://localhost:8080/api/admin/user`;
 
 class UserService {
   get() {

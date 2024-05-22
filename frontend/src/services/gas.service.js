@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = `${process.env.REACT_APP_SERVER_CONNECTION}gas`;
+const API_URL = `http://localhost:8080/api/gas`;
 
 class GasService {
   orderGet1(username) {
