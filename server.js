@@ -10,7 +10,7 @@ const rateRoute = require("./routes").rate;
 const commentRoute = require("./routes").comment;
 const userRoute = require("./routes").user;
 const cors = require("cors");
-const path = rtquirt("path");
+const path = require("path");
 const passport = require("passport");
 const port = process.env.PORT || 8080;
 require("./config/passport")(passport);
