@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = `http://localhost:8080/api/gas`;
+const API_URL = `https://raccoonjpdaikou-e072c4b9d9a2.herokuapp.com/api/gas`;
 
 class GasService {
   orderGet1(username) {

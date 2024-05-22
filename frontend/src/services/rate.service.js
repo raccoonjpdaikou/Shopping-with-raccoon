@@ -6,7 +6,7 @@ if (localStorage.getItem("raccoon")) {
   token = "";
 }
 axios.defaults.headers.common["Authorization"] = token;
-const API_URL = `http://localhost:8080/api/admin/rate`;
+const API_URL = `https://raccoonjpdaikou-e072c4b9d9a2.herokuapp.com/api/admin/rate`;
 
 class RateService {
   post(rate) {
