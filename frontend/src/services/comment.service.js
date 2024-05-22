@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = `https://raccoonjpdaikou-e072c4b9d9a2.herokuapp.com/admin/comment`;
+const API_URL = `https://raccoonjpdaikou-e072c4b9d9a2.herokuapp.com/api/admin/comment`;
 let token;
 if (localStorage.getItem("raccoon")) {
   token = JSON.parse(localStorage.getItem("raccoon")).token;

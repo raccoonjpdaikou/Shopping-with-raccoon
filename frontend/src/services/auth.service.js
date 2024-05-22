@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = `https://raccoonjpdaikou-e072c4b9d9a2.herokuapp.com/user`;
+const API_URL = `https://raccoonjpdaikou-e072c4b9d9a2.herokuapp.com/api/user`;
 
 class AuthService {
   register(username, password, role) {
