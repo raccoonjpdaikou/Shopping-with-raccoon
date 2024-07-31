@@ -27,7 +27,7 @@ router.post("/order1", async (req, res) => {
 router.post("/order2", async (req, res) => {
   axios
     .get(
-      "https://script.google.com/macros/s/AKfycbzYgTg66ZG3KbkzxaFSvuieh4MT_SX2IK79Q8Qa727bYkEIDpP0moeW76vf_ZN8eQU/exec?uid=" +
+      "https://script.google.com/macros/s/AKfycbw8gAT6wj8QGnDWqpYk8_rcHaHpJk4dG0Tc02leKO63Hn_Oi-5cNQyqhsIqUoSF-Rk/exec?uid=" +
         req.body.username
     )
     .then((data) => {
